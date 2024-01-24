@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>higala archives</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/o.png">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://unpkg.com/interactjs/dist/interact.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script src="home.js"></script>
+    <script src="nav.js"></script>
+
+    <style>
+
+@media only screen and (max-width: 420px){
+            .nav{
+                width: 100%;
+            }
+            .modal-content {
+                flex-direction: column;
+            }
+
+            .modal-content img {
+                min-width: 100%;
+                border-radius: 5px;
+            }
+
+            #caption {
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+
+
+        .artworks:hover {
+            opacity: 0.95;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+            align-items: center;
+            justify-content: center;
+    
+        }
+
+        .modal-content, #caption {  
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.1s;
+            animation-name: zoom;
+            animation-duration: 0.2s;
+        }       
+        @-webkit-keyframes zoom {
+            from {-webkit-transform:scale(0)} 
+            to {-webkit-transform:scale(1)}
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+
+        .close:hover, .close:focus {
+            text-decoration: none;
+            cursor: pointer;
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <div class="navContainer">
+        <div class="row">
+            <div>
+                <a href="#">about</a>
+            </div>
+            <div>
+                <a href="index.html"> archives</a>
+            </div>
+        </div>
+        </div>
+        <div class="titlePage">
+
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="img01">
+            <div id="caption"></div>
+        </div>
+    </div>
+
+    <div class="container1">
+        <img class="artworks" src="assets/rhi/fate.jpg" alt="Fate <br><br>Digital <br>2023 " data-link="https://www.instagram.com/lovurhi/" >
+
+        <img class="artworks" src="assets/omi/Cliff side Forest.jpg" alt="CLIFF SIDE FOREST<br><br>Ink illustration<br>12x18 in <br>" data-link="https://www.instagram.com/doman_ponponn/">
+
+        <img class="artworks" src="assets/omi/Kapawa.jpg" alt="KAPAWA <br><br>Ink illustration<br>12x18 in <br>" data-link="https://www.instagram.com/doman_ponponn/">
+
+        <img class="artworks" src="assets/omi/METAMORPHOSIS.png" alt="METAMORPHOSIS<br><br> Ink illustration<br>Letter Size" data-link="https://www.instagram.com/doman_ponponn/">
+
+        <img class="artworks" src="assets/soba/heavy is the heart.png" alt="heavy is the heart<br> <br> mixed media on box <br> 7.85 x 2.5 x 9.85 in" data-link="" >
+
+        <img class="artworks" src="assets/soba/in silence.png" alt="in silence<br> <br> Charcoal on paper <br> 11.7 x 8.3 in" data-link="" >
+
+        <img class="artworks" src="assets/soba/PULLED UNDER.png" alt="PULLED UNDER<br><br>Acrylic on paper<br> 8.3 x 11.7 in" data-link="" >
+
+        <img class="artworks" src="assets/soba/RUMINATE.png" alt="RUMINATE<br> <br> Acrylic on paper<br> 8.3 x 11.7 in" data-link="" >
+
+        <img class="artworks" src="assets/soba/SHE RAGE.png" alt="SHE RAGE<br> <br> Acrylic on paper <br> 8.3 x 11.7 in" data-link="" >
+
+        <img class="artworks" src="assets/soba/thinking about you.png" alt="thinking about you<br> <br> Acrylic on canvas<br> 8.3 x 11.7 in" data-link="" >
+
+        <img class="artworks" src="assets/john/Fami(ne)lya.jpg" alt="Fami(ne)lya<br> <br> Graphite and ink on illustration board <br>2022" data-link="" >
+
+        <img class="artworks" src="assets/john/Pieta 2k.jpg" alt="Pieta 2k<br><br> Graphite on vellum<br>2021" data-link="" >
+
+        <img class="artworks" src="assets/john/Thanatos.jpg" alt="Thanatos<br><br>Ink on vellum<br>2023" data-link="" >
+
+        <img class="artworks" src="assets/shirley/IMG_1455.jpeg" alt="untitled<br><br> 9x12 in<br> 2022" data-link="https://www.instagram.com/leyalee_art_addict/" >
+
+        <img class="artworks" src="assets/kimkim/Can see it all.jpg" alt="Can see it all<br><br>Mixed media on Canvas<br> 20x24 in" data-link="https://www.instagram.com/kimkim.magno/" >
+
+        <img class="artworks" src="assets/shirley/IMG_1493.jpeg" alt="untitled<br><br> 9x12 in <br> 2022" data-link="https://www.instagram.com/leyalee_art_addict/" >
+
+        <img class="artworks" src="assets/shirley/IMG_1616.jpeg" alt="untitled<br><br> 9x12 in <br> 2022" data-link="https://www.instagram.com/leyalee_art_addict/" >
+
+        <img class="artworks" src="assets/rhi/angel tears.jpg" alt="angel tears<br> <br> Digital<br> 2022" data-link="https://www.instagram.com/lovurhi/">
+
+        <img class="artworks" src="assets/rhi/comfort room.jpg" alt="comfort room<br> <br> Digital<br>2022" data-link="https://www.instagram.com/lovurhi/" >
+        
+        <img class="artworks" src="assets/kimkim/Balakid ng sariling isipan.jpg" alt="Balakid ng sariling isipan<br><br> Zine<br> 2023" data-link="https://www.instagram.com/kimkim.magno/" >
+
+        <img class="artworks" src="assets/kimkim/Istorya.jpg" alt="Istorya<br><br>Typewritten on kraft paper<br> 2023" data-link="" >
+
+        <img class="artworks" src="assets/john/s2021.png" alt="Untitled<br><br> 2021" data-link="" >
+
+        <img class="artworks" src="assets/john/s2023.png" alt="Untitled<br><br> 2023" data-link="" >
+
+        <img class="artworks" src="assets/kimkim/dagat_commissioned.jpg" alt="untitled<br><br> 2023" data-link="" >
+
+        <img class="artworks" src="assets/kimkim/Balakid ng sariling isipan_SHELL.jpg" alt="Balakid ng sariling isipan<br><br>Acylic on Canvas<br> 2022" data-link="" >
+    </div>
+
+
+    <script>
+
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        function openModal(src, alt) {
+            modal.style.display = "block";
+            modalImg.src = src;
+            captionText.innerHTML = alt;
+        }
+
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+
+        var images = document.querySelectorAll(".artworks");
+
+        images.forEach(function(img) {
+            img.onclick = function() {
+                openModal(this.src, this.alt);
+            };
+        });
+
+        function openModal(src, alt, link) {
+            modal.style.display = "block";
+            modalImg.src = src;
+            captionText.innerHTML = alt;
+
+            if (link) {
+                captionText.innerHTML += '<br><a href="' + link + '" target="_blank">View Artist</a>';
+            }
+        }
+
+        var images = document.querySelectorAll(".artworks");
+
+
+        images.forEach(function(img) {
+            img.onclick = function() {
+                
+                var link = this.getAttribute('data-link');
+                openModal(this.src, this.alt, link);
+            };
+        });
+
+    </script>
+
+</body>
+</html>
