@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3</title>
+</head>
+<body>
+    <center>
+    <h2>Activity 3</h2>
+    </center>
+
+    <p id="demo">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>
+    <button type="button" onclick='changeContent()'>Change Content</button> <br><br>
+    <button type="button" onclick='changeStyle()'>Change Font Style</button> <br><br>
+
+    <p id="hideShowDemo">This paragraph can be hidden or shown.</p><br>
+    <button type="button" onclick='hideShow()'>Hide/Show</button>
+
+    <script>
+    function changeContent() {
+      // Change content
+        document.getElementById("demo").innerHTML = "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure";
+    }
+
+    function changeStyle() {
+      // Change font style for the entire web page
+        document.body.style.fontFamily = 'Courier New, monospace';
+        document.body.style.fontSize = '14px';
+        document.body.style.color = 'red';
+    }
+
+    function hideShow() {
+        var paragraph = document.getElementById('hideShowDemo');
+
+      // Toggle the visibility of the paragraph
+        if (paragraph.style.display === 'none') {
+        paragraph.style.display = 'block';
+        } else {
+        paragraph.style.display = 'none';
+        }
+    }
+
+    console.log("Hello World");
+    alert("Welcome to CIIT");
+
+    var x = 5;
+    var y = 3;
+
+    // Compute x^y
+    var result = Math.pow(x, y);
+
+    // Display the result on the HTML page
+    var resultElement = document.createElement('p');
+    resultElement.innerText = 'x^y = ' + result;
+    document.body.appendChild(resultElement);
+    </script>
+
+</body>
+</html>
+
