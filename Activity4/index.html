@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.7.min.js"></script>
+    <title>Activity 4</title>
+    <style>
+        #rules ul li {
+            color: #000000;
+        }
+        #rules ul li.complete {
+            color: #5DB406;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label>Username:</label><br>
+        <input type="text" id="user" placeholder=" " name="username"><br>
+        
+        <label>Password:</label><br>
+        <input type="password" id="pass" class="validate password" name="password" value="" /><br>
+        <input type="submit" name="" id="">
+    </form>
+    <br>
+
+    <div id="rules">
+        <h4>Username must meet the following:</h4>
+        <ul>
+            <li class="username_length">At least 6 characters</li>
+            <li class="username_specialChara">Doesn't contain special characters except _</li>
+        </ul>
+        <h4>Password must meet the following:</h4>
+        <ul>
+            <li class="password_length">At least 8 characters</li>
+            <li class="password_case">Password is a combination of upper & lower case</li>
+            <li class="password_digit">At least one digit</li>
+            <li class="password_specialChara">At least one special character</li>
+        </ul>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            var validateInput = $('input.validate');
+            
+            function validateInputs() {
+                var password = $('#pass').val();
+                var upper = password.match(/[A-Z]/);
+                var digit = password.match(/[0-9]/);
+                var lower = password.match(/[a-z]/);
+                var specialChara = password.match(/[^a-zA-Z0-9]/);
+
+                var username = $('#user').val();
+                
+                var all_user = username.length >= 6 && !(/[^a-zA-Z0-9_]/.test(username));
+                $('.username_length').toggleClass('complete', all_user);
+                $('.username_specialChara').toggleClass('complete', !(/[^a-zA-Z0-9_]/.test(username)));
+
+
+                var all_pass = password.length >= 8 &&
+                                upper !== null &&
+                                lower !== null &&
+                                digit !== null &&
+                                specialChara !== null;
+
+                $('.password_length').toggleClass('complete', password.length >= 8);
+                $('.password_case').toggleClass('complete', upper !== null && lower !== null);
+                $('.password_digit').toggleClass('complete', digit !== null);
+                $('.password_specialChara').toggleClass('complete', specialChara !== null);
+            }
+
+            $('#pass').on('keyup', validateInputs);
+            $('#user').on('keyup', validateInputs);
+        });
+    </script>    
+</body>
+</html>
